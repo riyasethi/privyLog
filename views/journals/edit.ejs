@@ -1,0 +1,23 @@
+<% layout('layouts/boilerplate')%>
+<div class="row">
+    <h1 class="text-center">Edit Journal</h1>
+    <div class="col-6 offset-3">
+        <form action="/journals/<%=journal._id%>?_method=PUT" method="POST" novalidate class="validated-form">
+            <div class="mb-3">
+                <label class="form-label" for="title">Title</label>
+                <input class="form-control" type="text" id="title" name="journal[title]" value="<%=journal.title %>" required />
+                <div class="valid-feedback">Looks good!</div>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label" for="content">Content</label>
+                <textarea class="form-control" type="text" id="content" name="journal[content]" required><%= journal.content%></textarea>
+                <div class="valid-feedback">Looks good!</div>
+            </div>
+            <div class="mb-3">
+                <button class="btn btn-info">Update journal</button>
+            </div>
+        </form>
+        <a href="/journals/<%= journal._id%>">Back To journal</a>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+<% layout('layouts/boilerplate')%>
+
+<h1>All Journals</h1>
+<div class="mb-2">
+    <a class="btn btn-success" href="/journals/new">Add New Journal</a>
+</div>
+<ul>
+    <% for (let journal of journals){%>
+    <div class="card w-50 m-4">
+        <div class="row">
+            <div class="col">
+                <div class="card-body">
+                    <h5 class="card-title"><%= journal.title %></h5>
+                    <a class="btn btn-primary" href="/journals/<%=journal._id%>">View</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <% }%>
+</ul>
